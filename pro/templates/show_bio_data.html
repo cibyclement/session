@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Bio Data</h2>
+    <a href="/logout">Logout</a><br><br>
+    <a href="/edit_bio_data">Add Bio Data</a><br><br>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Qualification</th>
+            <th>Occupation</th>
+            <th>Action</th>
+        </tr>
+        {% for data in bio_data %}
+        <tr>
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.date_of_birth }}</td>
+            <td>{{ data.get_gender_display }}</td>
+            <td>{{ data.phone_number }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.qualification }}</td>
+            <td>{{ data.occupation }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

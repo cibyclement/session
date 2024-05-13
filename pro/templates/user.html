@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name" ><br>
+    <input type="number" name="age" placeholder="Age" ><br>
+    <input type="date" name="date_of_birth" placeholder="Date of Birth"><br>
+    <input type="submit" value="submit">
+</form>
+</div>
+
+<div>
+{% for det in user_details %}
+<li>{{ det.name }}</li>
+<li>{{ det.age }}</li>
+<li>{{ det.date_of_birth }}</li>
+{% endfor %}
+</div>
+{% endblock %}

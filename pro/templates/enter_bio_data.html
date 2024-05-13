@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Edit Bio Data</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name" value="{{ biodata.name }}"><br>
+    <input type="number" name="age" placeholder="Age" value="{{ biodata.age }}"><br>
+    <input type="date" name="date_of_birth" placeholder="Date of Birth" value="{{ biodata.date_of_birth }}"><br>
+    <select name="gender">
+        <option value="M" {% if biodata.gender == 'M' %} selected {% endif %}>Male</option>
+        <option value="F" {% if biodata.gender == 'F' %} selected {% endif %}>Female</option>
+        <option value="O" {% if biodata.gender == 'O' %} selected {% endif %}>Other</option>
+    </select><br>
+    <input type="text" name="phone_number" placeholder="Phone Number" value="{{ biodata.phone_number }}"><br>
+    <input type="email" name="email" placeholder="Email" value="{{ biodata.email }}"><br>
+    <input type="text" name="qualification" placeholder="Qualification" value="{{ biodata.qualification }}"><br>
+    <input type="text" name="occupation" placeholder="Occupation" value="{{ biodata.occupation }}"><br>
+    <input type="submit" value="Update">
+</form>
+{% endblock %}

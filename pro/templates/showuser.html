@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div>
+    <table border="1">
+{% for det in user_details %}
+<tr>
+    <td>{{ det.name }}</td>
+    <td>{{ det.age }}</td>
+    <td>{{ det.date_of_birth}}</td>
+<tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
